@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:orientation="horizontal" android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="16dp" >-->
+
+<!--    &lt;!&ndash; Now we plan to show the magnitude within a circle and the color of the circle would vary according to the magnitude and that would be done via the Java code, so we comment out the below text view and add up a new text view that would support our intention of displaying the circle-->
+<!--    <TextView-->
+<!--        android:id="@+id/magnitude"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+
+<!--     &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/magnitude"-->
+<!--        android:layout_width="36dp"-->
+<!--        android:layout_height="36dp"-->
+<!--        android:layout_gravity="center_vertical"-->
+<!--        android:background="@drawable/magnitude_circle"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="16sp"-->
+<!--        />-->
+
+<!--    &lt;!&ndash;  android:background="@drawable/magnitude_circle" is added to the Textview code for making it support the circle within which the magnitude would be shown &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Now since we intend to show the location offset and the actual location in 2 different font styles, its better to have 2 textviews instead of one, so we comment out our earlier created textview that had an id of 'location'-->
+<!--    <TextView-->
+<!--        android:id="@+id/location"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+<!--    &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/location_offset"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--         />-->
+
+<!--    &lt;!&ndash; android:layout_marginLeft="16dp" is added for spacing between the magnitude and the layout offset part &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/primary_location"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/date"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+
+<!--    &lt;!&ndash; One more TextView added because now the time is just no longer in milliseconds, but we are converting it to show as Date and then Time &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/time"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+
+<!--</LinearLayout>-->
+
+<!-- The earlier code of the 'earthquake_list_item.xml' File has been commented out as seen above, if we want to get that code back, simply select the code and press Ctrl + / to get the earlier code back -->
+
+<!-- New code with more visual polish -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp">
+
+    <TextView
+        android:id="@+id/magnitude"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:text="8.9" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/location_offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="30km S of" />
+
+        <TextView
+            android:id="@+id/primary_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/textColorEarthquakeLocation"
+            android:textSize="16sp"
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="Mar 6, 2010" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="3:00 PM" />
+
+    </LinearLayout>
+</LinearLayout>
